@@ -57,8 +57,9 @@ cout << "Linux Kernel Version: " << line << endl << endl;
 thisProcFile.close(); 
 
 // System time
-int seconds1;
-int seconds2;
+string seconds1;
+string seconds2;
+
 thisProcFile.open("/proc/uptime", ios::in);
 getline(thisProcFile, line);
 thisProcFile >> seconds1 >> seconds2; 
