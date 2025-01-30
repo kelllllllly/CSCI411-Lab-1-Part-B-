@@ -23,7 +23,7 @@ thisProcFile.open("/proc/cpuinfo, ios::in");
 int count = 0; 
 string readin;
 while (getline(thisProcFile,readin)){
-    if (line.find("processor") != string::npos){
+    if (readin.find("processor") != string::npos){
         count++;
     }
 }
