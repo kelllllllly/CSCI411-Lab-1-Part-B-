@@ -18,13 +18,12 @@ thisProcFile.close();
 
 // getting the number of processers 
 int count = 0; 
-while (getline(thisProcFile,line)){
-
-    if (line.find("processor") != 0){
-        count++; 
+string readin;
+while (getline(thisProcFile,readin)){
+    if (line.find("processor") !=string::npos){
+        count++;
     }
 }
-
 cout << "Number of processsing units: " << count << endl;
 thisProcFile.close();
 
