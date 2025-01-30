@@ -14,6 +14,8 @@ string line;
 getline(thisProcFile, line); 
 cout << "Hostname: " << line << endl << endl; 
 
+thisProcFile.close();
+
 // getting the number of processers 
 cout << "Number of processsing units: ";
 while (getline(thisProcFile,line)){
