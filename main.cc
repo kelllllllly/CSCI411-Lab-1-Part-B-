@@ -30,12 +30,13 @@ cout << "Number of processsing units: " << count << endl;
 thisProcFile.close();
 
 // getting the CPU type and model 
-thisProcFile.open("cat /proc/cpuinfo", ios::in); 
+thisProcFile.open("/proc/cpuinfo", ios::in); 
 while(getline(thisProcFile, line)){
   if(line.find("model") != string::npos){
+    cout << line << endl;
   }
 }
-    cout << line << endl;
+    
 
 thisProcFile.close();
 
