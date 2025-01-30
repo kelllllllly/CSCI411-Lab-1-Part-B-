@@ -17,13 +17,16 @@ cout << "Hostname: " << line << endl << endl;
 thisProcFile.close();
 
 // getting the number of processers 
-cout << "Number of processsing units: ";
+int count; 
 while (getline(thisProcFile,line)){
 
     if (line.find("processor") != string::npos){
-        cout << line << endl;
+        count++; 
+        
     }
 }
+
+cout << "Number of processsing units: " << count << endl;
 thisProcFile.close();
 
 return 0;
