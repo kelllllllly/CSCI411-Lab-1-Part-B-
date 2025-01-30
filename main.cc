@@ -53,8 +53,19 @@ thisProcFile.close();
 
 thisProcFile.open("/proc/version", ios::in);
 getline(thisProcFile, line);
-cout << "Linux Kernel Version: " << line << endl;
+cout << "Linux Kernel Version: " << line << endl << endl;
 thisProcFile.close(); 
+
+// System time
+int seconds1;
+int seconds2;
+thisProcFile.open("/proc/uptime", ios::in);
+getline(thisProcFile, line);
+thisProcFile >> seconds1 >> seconds2; 
+
+cout << seconds1 << seconds2; 
+
+thisProcFile.close();
 
 return 0;
 }
