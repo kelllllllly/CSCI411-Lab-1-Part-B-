@@ -40,8 +40,8 @@ while(getline(thisProcFile, line)){
     if(line.find(cpustuffs) != string::npos){
         cout << line << endl;
   }
-  break;
     }
+    break;
 }
     
 
