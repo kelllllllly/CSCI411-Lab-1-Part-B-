@@ -62,7 +62,7 @@ thisProcFile.close();
 
 thisProcFile.open("/proc/uptime", ios::in);
 string reboot, idle; 
-
+cout << "System Time" << endl;
 while(getline(thisProcFile, line)){
     stringstream read(line);
     // read in the first second (time since last reboot)
