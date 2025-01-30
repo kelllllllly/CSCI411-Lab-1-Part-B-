@@ -33,9 +33,10 @@ thisProcFile.close();
 thisProcFile.open("cat /proc/cpuinfo", ios::in); 
 while(getline(thisProcFile, line)){
   if(line.find("model") != string::npos){
-    cout << line << endl;
   }
 }
+    cout << line << endl;
+
 thisProcFile.close();
 
 return 0;
