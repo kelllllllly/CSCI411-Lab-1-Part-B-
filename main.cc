@@ -37,18 +37,24 @@ thisProcFile.open("/proc/cpuinfo", ios::in);
 vector <string> cpustuff = {"processor", "vendor_id", "model"};
 int loop; 
 while( loop < 3 && getline(thisProcFile, line)){
-
     for(const auto cpustuffs : cpustuff){
-    if(line.find(cpustuffs) != string::npos){
-        cout << line << endl;
-        loop++;
-  }
+        if(line.find(cpustuffs) != string::npos){
+            cout << line << endl;
+            loop++;
+        }
     }
 }
 
 cout << endl;
 
 thisProcFile.close();
+
+// kernel version
+
+thisProcFile.open("/proc/version", ios::in);
+getline(thisProcFile, line);
+cout << "Linux Kernel Version: " << endl;
+thisProcFile.close(); 
 
 return 0;
 }
