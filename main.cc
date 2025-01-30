@@ -17,7 +17,7 @@ cout << "Hostname: " << line << endl << endl;
 thisProcFile.close();
 
 // getting the number of processers 
-int count; 
+int count = 0; 
 while (getline(thisProcFile,line)){
 
     if (line.find("processor") != string::npos){
