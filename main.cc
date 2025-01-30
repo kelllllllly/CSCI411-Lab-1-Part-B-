@@ -71,11 +71,19 @@ while(getline(thisProcFile, line)){
     // read in the second seconds (idle time)
     getline(read, idle);
 
-    cout << "Time since last re-boot" << reboot << "seconds." << endl;
-    cout << "Time in idle is" << idle << "seconds." << endl;
+    cout << "Time since last re-boot " << reboot << " seconds." << endl;
+    cout << "Time in idle is " << idle << " seconds." << endl;
 }
 
+thisProcFile.close();
 
+// memory info! 
+
+thisProcFile.open("/proc/meminfo", ios::in);
+while(loop < 1 && getline(thisProcFile, line)){
+    cout << line << endl;
+    loop++;
+}
 thisProcFile.close();
 
 return 0;
