@@ -20,7 +20,6 @@ thisProcFile.close();
 // getting the number of processers 
 thisProcFile.open("/proc/cpuinfo, ios::in");
 int count = 0; 
-string line;
 while (getline(thisProcFile,line)){
     if (line.find("processor") !=string::npos){
         count++;
