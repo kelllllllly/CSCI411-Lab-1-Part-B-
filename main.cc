@@ -80,9 +80,10 @@ thisProcFile.close();
 // memory info! 
 
 thisProcFile.open("/proc/meminfo", ios::in);
-while(loop < 1 && getline(thisProcFile, line)){
+int loop2;
+while(loop2 < 2 && getline(thisProcFile, line)){
     cout << line << endl;
-    loop++;
+    loop2++;
 }
 thisProcFile.close();
 
