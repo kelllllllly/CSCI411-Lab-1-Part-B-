@@ -19,7 +19,7 @@ thisProcFile.close();
 
 
 // getting the number of processers 
-thisProcFile.open("/proc/cpuinfo, ios::in");
+thisProcFile.open("/proc/cpuinfo", ios::in);
 int count = 0; 
 string readin;
 while (getline(thisProcFile,readin)){
