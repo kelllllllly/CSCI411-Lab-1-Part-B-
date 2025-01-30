@@ -2,6 +2,7 @@
 #include <fstream>
 #include <string> 
 #include <vector> 
+#include <sstream> 
 
 using namespace std; 
 
@@ -58,13 +59,21 @@ cout << "Linux Kernel Version: " << line << endl << endl;
 thisProcFile.close(); 
 
 // System time
-string seconds1;
-string seconds2;
 
 thisProcFile.open("/proc/uptime", ios::in);
-getline(thisProcFile, line);
+string reboot, idle; 
 
-cout << line << endl;
+while(getline(thisProcFile, line)){
+    stringstream read(line);
+    // read in the first second (time since last reboot)
+    getline(read, reboot, ' ');
+    
+    // read in the second seconds (idle time)
+    getline(read, idle);
+
+    cout << "Time since last re-boot" << reboot << "seconds." << endl;
+    cout << "Time in idle is" << idle << "seconds." << endl;
+}
 
 
 thisProcFile.close();
