@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <string> 
+#include <vector> 
 
 using namespace std; 
 
@@ -31,10 +32,14 @@ thisProcFile.close();
 
 // getting the CPU type and model 
 thisProcFile.open("/proc/cpuinfo", ios::in); 
+vector <string> cpustuff = {"processor", "vendor_id" "model", "model name"};
 while(getline(thisProcFile, line)){
-  if(line.find("model") != string::npos){
-    cout << line << endl;
+
+    for(const auto cpustuffs : cpustuff){
+    if(line.find(cpustuffs) != string::npos){
+        cout << line << endl;
   }
+    }
 }
     
 
