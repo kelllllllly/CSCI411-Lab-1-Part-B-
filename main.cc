@@ -20,9 +20,8 @@ thisProcFile.close();
 int count = 0; 
 while (getline(thisProcFile,line)){
 
-    if (line.find("processor") != string::npos){
+    if (line.find("processor       :") != string::npos){
         count++; 
-        
     }
 }
 
