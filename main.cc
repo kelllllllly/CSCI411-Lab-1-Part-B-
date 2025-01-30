@@ -30,15 +30,17 @@ while (getline(thisProcFile,line)){
 cout << "Number of processsing units: " << count << endl;
 thisProcFile.close();
 
+cout << "CPU(s) Type and model: " << endl;
 // getting the CPU type and model 
 thisProcFile.open("/proc/cpuinfo", ios::in); 
+
 vector <string> cpustuff = {"processor", "vendor_id", "model"};
 int loop; 
 while( loop < 3 && getline(thisProcFile, line)){
 
     for(const auto cpustuffs : cpustuff){
     if(line.find(cpustuffs) != string::npos){
-        cout << line << endl;
+        cout << line << endl << endl;
         loop++;
   }
     }
