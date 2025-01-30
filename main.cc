@@ -22,6 +22,7 @@ string readin;
 while (getline(thisProcFile,readin)){
     if (line.find("processor") !=string::npos){
         count++;
+        cout << count; 
     }
 }
 cout << "Number of processsing units: " << count << endl;
