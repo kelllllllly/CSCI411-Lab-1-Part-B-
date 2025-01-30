@@ -32,7 +32,7 @@ thisProcFile.close();
 
 // getting the CPU type and model 
 thisProcFile.open("/proc/cpuinfo", ios::in); 
-vector <string> cpustuff = {"processor", "vendor_id" "model", "model name"};
+vector <string> cpustuff = {"processor", "vendor_id", "model", "model name"};
 while(getline(thisProcFile, line)){
 
     for(const auto cpustuffs : cpustuff){
