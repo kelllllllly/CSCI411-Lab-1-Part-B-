@@ -30,6 +30,7 @@ while (getline(thisProcFile,line)){
 cout << "Number of processsing units: " << count << endl << endl;
 thisProcFile.close();
 
+
 cout << "CPU(s) Type and model: " << endl;
 // getting the CPU type and model 
 thisProcFile.open("/proc/cpuinfo", ios::in); 
@@ -62,9 +63,9 @@ string seconds2;
 
 thisProcFile.open("/proc/uptime", ios::in);
 getline(thisProcFile, line);
-thisProcFile >> seconds1 >> seconds2; 
 
-cout << seconds1 << seconds2; 
+cout << line << endl;
+
 
 thisProcFile.close();
 
