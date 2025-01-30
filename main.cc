@@ -33,15 +33,14 @@ thisProcFile.close();
 // getting the CPU type and model 
 thisProcFile.open("/proc/cpuinfo", ios::in); 
 vector <string> cpustuff = {"processor", "vendor_id", "model"};
-
-while(getline(thisProcFile, line)){
+int loop; 
+while( loop < 3 && getline(thisProcFile, line)){
 
     for(const auto cpustuffs : cpustuff){
     if(line.find(cpustuffs) != string::npos){
         cout << line << endl;
   }
     }
-    break;
 }
     
 
