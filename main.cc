@@ -53,7 +53,7 @@ thisProcFile.close();
 
 thisProcFile.open("/proc/version", ios::in);
 getline(thisProcFile, line);
-cout << "Linux Kernel Version: " << endl;
+cout << "Linux Kernel Version: " << line << endl;
 thisProcFile.close(); 
 
 return 0;
