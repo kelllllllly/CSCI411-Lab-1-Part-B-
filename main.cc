@@ -40,12 +40,13 @@ while( loop < 3 && getline(thisProcFile, line)){
 
     for(const auto cpustuffs : cpustuff){
     if(line.find(cpustuffs) != string::npos){
-        cout << line << endl << endl;
+        cout << line << endl;
         loop++;
   }
     }
 }
-    
+
+cout << endl;
 
 thisProcFile.close();
 
