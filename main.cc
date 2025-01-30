@@ -27,7 +27,7 @@ while (getline(thisProcFile,line)){
         count++;
     }
 }
-cout << "Number of processsing units: " << count << endl;
+cout << "Number of processsing units: " << count << endl << endl;
 thisProcFile.close();
 
 cout << "CPU(s) Type and model: " << endl;
