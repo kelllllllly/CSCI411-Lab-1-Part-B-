@@ -21,7 +21,6 @@ thisProcFile.close();
 // getting the number of processers 
 thisProcFile.open("/proc/cpuinfo", ios::in);
 int count = 0; 
-//string readin;
 while (getline(thisProcFile,line)){
     if (line.find("processor") != string::npos){
         count++;
@@ -31,11 +30,13 @@ cout << "Number of processsing units: " << count << endl;
 thisProcFile.close();
 
 // getting the CPU type and model 
-//thisProcFile.open("cat /proc/cpuinfo", ios::in); 
-//while(getline(thisProcFile, line)){
- //   if(line,)
-//}
-//thisProcFile.close();
+thisProcFile.open("cat /proc/cpuinfo", ios::in); 
+while(getline(thisProcFile, line)){
+  if(line.find("model") != string::npos){
+    cout << line << endl;
+  }
+}
+thisProcFile.close();
 
 return 0;
 }
