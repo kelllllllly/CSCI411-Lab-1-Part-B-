@@ -72,7 +72,7 @@ while(getline(thisProcFile, line)){
     getline(read, idle);
 
     cout << "Time since last re-boot " << reboot << " seconds." << endl;
-    cout << "Time in idle is " << idle << " seconds." << endl;
+    cout << "Time in idle is " << idle << " seconds." << endl << endl;
 }
 
 thisProcFile.close();
